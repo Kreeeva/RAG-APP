@@ -25,7 +25,12 @@ Settings.text_splitter = text_splitter
 # per-index
 index = VectorStoreIndex.from_documents(documents, transformations=[text_splitter])
 
-query_engine = index.as_query_engine()
+# Enhanced retrieval setup
+retriever = VectorIndexRetriever(index=index, similarity_top_k=4)
+postprocessor = SimilarityPostprocessor(similarity_cutoff=0.80)
+query_engine = RetrieverQueryEngine(
+    retriever=retriever, node_postprocessors=[postprocessor]
+)
 
 
 @app.post("/api/query")
