@@ -8,6 +8,8 @@ import {
         SignedOut,
         UserButton} from "@clerk/nextjs"
 import { Metadata } from "next"
+import '@/app/globals.css'
+
 // app/layout.tsx
 
  
