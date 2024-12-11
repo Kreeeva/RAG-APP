@@ -43,11 +43,12 @@ export default function ChatInterface() {
       <div className={`bg-gray-100 ${sidebarOpen ? 'w-64' : 'w-0'} transition-all duration-300`}>
         <div className="p-4">
           <h2 className="font-bold mb-4">Chat History</h2>
+            
           <ScrollArea className="h-[calc(100vh-8rem)]">
           </ScrollArea>
         </div>
       </div>
-
+    
       <div className="flex-1 flex flex-col">
         <div className="bg-white p-4 shadow-sm flex items-center">
           <Button 
